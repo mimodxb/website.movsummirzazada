@@ -14,6 +14,7 @@ import InquiriesAdmin from '@/components/admin/InquiriesAdmin';
 import FeatureSlotsAdmin from '@/components/admin/FeatureSlotsAdmin';
 import LegalComplaintsAdmin from '@/components/admin/LegalComplaintsAdmin';
 import MessagingAdmin from '@/components/admin/MessagingAdmin';
+import CaseDeliverablesAdmin from '@/components/admin/CaseDeliverablesAdmin';
 
 const AdminPage = () => {
   const { signOut } = useAuth();
@@ -47,7 +48,7 @@ const AdminPage = () => {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
           <div className="overflow-x-auto pb-2">
             <TabsList className="bg-[#13251E] border border-[#E0A995]/20 p-1 h-auto inline-flex min-w-full md:min-w-0">
-              {['Brands', 'Services', 'Partners', 'Offers', 'Orders', 'Inquiries', 'Feature Slots', 'Legal Intakes', 'Messaging'].map((tab) => {
+              {['Brands', 'Services', 'Partners', 'Offers', 'Orders', 'Inquiries', 'Feature Slots', 'Legal Intakes', 'Messaging', 'Case Deliverables'].map((tab) => {
                 const value = tab.toLowerCase().replace(' ', '-');
                 return (
                   <TabsTrigger 
@@ -72,6 +73,7 @@ const AdminPage = () => {
             <TabsContent value="feature-slots"><FeatureSlotsAdmin /></TabsContent>
             <TabsContent value="legal-intakes"><LegalComplaintsAdmin /></TabsContent>
             <TabsContent value="messaging"><MessagingAdmin /></TabsContent>
+            <TabsContent value="case-deliverables"><CaseDeliverablesAdmin /></TabsContent>
           </div>
         </Tabs>
       </main>
